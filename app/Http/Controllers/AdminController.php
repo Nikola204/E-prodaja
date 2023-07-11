@@ -272,8 +272,8 @@ class AdminController extends Controller{
             if($usertype == '1')
             {
                 $order=order::find($id);
-                $order->delivery_status="delivered"; //ovo ispravi
-                $order->payment_status="Paid";      //ovo ispravi
+                $order->delivery_status="Dostavljeno"; 
+                $order->payment_status="Plaćeno";      
     
                 $order->save();
                 return redirect()->back();

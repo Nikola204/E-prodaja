@@ -10,7 +10,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="">
-      <title>Web-shop</title>
+      <title>E-prodaja</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.css')}}" />
       <!-- font awesome style -->
@@ -69,11 +69,11 @@
       <div class="center">
         <table>
             <tr>
-                <th class="th_deg">Product title</th>
-                <th class="th_deg">Product quantity</th>
-                <th class="th_deg">Price</th>
-                <th class="th_deg">Image</th>
-                <th class="th_deg">Action</th>
+                <th class="th_deg">Naziv proizvoda</th>
+                <th class="th_deg">Količina</th>
+                <th class="th_deg">Cijena</th>
+                <th class="th_deg">Slika</th>
+                <th class="th_deg">Akcija</th>
             </tr>
 
             <?php
@@ -83,11 +83,11 @@
             <tr>
                 <td>{{$cart->product_title}}</td>
                 <td>{{$cart->quantity}}</td>
-                <td>${{$cart->price}}</td>
+                <td>{{$cart->price}} KM</td>
                 <td><img class="img_des" src="/product/{{$cart->image}}"/></td>
                 <td>
                     <a class="btn btn-danger" onclick="return confirm('Are You sure to remove this product')" href="{{url('remove_cart',$cart->id)}}">
-                        Remove
+                        Ukloni
                     </a>
                 </td>
             </tr>
@@ -98,12 +98,11 @@
             <!-- {{$totalprice}} -->
         </table>
         <div>
-            <h1 class="total_price">Total price: ${{$totalprice}}</h1>
+            <h1 class="total_price">Ukupna cijena: {{$totalprice}} KM</h1>
         </div>
         <div>
-            <h1 style="font-size: 25px; padding-bottom: 15px;">Proceed to order</h1>
-            <a href="{{url('cash_order')}}" class="btn btn-danger">Cash on delivery</a>
-            <a href="" class="btn btn-danger">Pay using card</a>
+            <h1 style="font-size: 25px; padding-bottom: 15px;">Nastavite s narudžbom</h1>
+            <a href="{{url('cash_order')}}" class="btn btn-danger">Plaćanje pri dostavi</a>
         </div>
       </div>
       <!-- jQery -->

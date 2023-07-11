@@ -59,7 +59,7 @@
                         <th>Status plaćanja</th>
                         <th>Status dostave</th>
                         <th>Slika</th>
-                        <th>Dostavljeno</th>
+                        <th>Dostava</th>
                     </tr>
 
                     @forelse($order as $order)
@@ -77,8 +77,8 @@
                             <img class="image_size" src="/product/{{$order->image}}"/>
                         </td>
                         <td>
-                            @if($order->delivery_status == 'processing')
-                            <a href="{{url('delivered',$order->id)}}" class="btn btn-primary" onclick="return confirm('Are you sure this product is delivered?!')">
+                            @if($order->delivery_status == 'Obrada')
+                            <a href="{{url('delivered',$order->id)}}" class="btn btn-primary" onclick="return confirm('Jeste li sigurni da je dostava obavljena?!')">
                                 Dostavljeno
                             </a>
                             @else

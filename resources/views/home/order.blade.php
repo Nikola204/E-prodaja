@@ -10,7 +10,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="images/favicon.png" type="">
-      <title>Web-shop</title>
+      <title>E-prodaja</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.css')}}" />
       <!-- font awesome style -->
@@ -50,30 +50,30 @@
         <div class="center">
             <table>
                 <tr>
-                    <th class="th_des">Product title</th>
-                    <th class="th_des">Quantity</th>
-                    <th class="th_des">Price</th>
-                    <th class="th_des">Payment status</th>
-                    <th class="th_des">Delivery status</th>
-                    <th class="th_des">Image</th>
-                    <th class="th_des">Cancel order</th>
+                    <th class="th_des">Naziv proizvoda</th>
+                    <th class="th_des">Količina</th>
+                    <th class="th_des">Cijena</th>
+                    <th class="th_des">Status plaćanja</th>
+                    <th class="th_des">Status dostave</th>
+                    <th class="th_des">Slika</th>
+                    <th class="th_des">Otkažite narudžbu</th>
                 </tr>
 
                 @foreach($order as $order)
                 <tr>
                     <td>{{$order->product_title}}</td> 
                     <td>{{$order->quantity}}</td>
-                    <td>{{$order->price}}</td>
+                    <td>{{$order->price}} KM</td>
                     <td>{{$order->payment_status}}</td>
                     <td>{{$order->delivery_status}}</td> 
                     <td>
                         <img height="100" width="180" src="product/{{$order->image}}"/>
                     </td>     
                     <td>
-                        @if($order->delivery_status=='processing')
-                        <a onclick="return confirm('Are You sure to cancel this order?!')" class="btn btn-danger" href="{{url('cancel_order',$order->id)}}">Cancel order </a>
+                        @if($order->delivery_status=='Obrada')
+                        <a onclick="return confirm('Jeste li sigurni da želite otkazati dostavu?!')" class="btn btn-danger" href="{{url('cancel_order',$order->id)}}">Otkažite dostavu</a>
                         @else
-                        <p style="color: blue;">Not allowed</p>
+                        <p style="color: blue;">Nije dopušteno</p>
                         @endif
                     </td>         
                 </tr>

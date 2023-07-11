@@ -10,7 +10,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="">
-      <title>Web-shop</title>
+      <title>E-prodaja</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.css')}}" />
       <!-- font awesome style -->
@@ -21,15 +21,8 @@
       <link href="{{asset('home/css/responsive.css')}}" rel="stylesheet" />
    </head>
    <body>
-      
+
          @include('home.header')
-        
-     
-      
-      
-      <!-- arrival section -->
-      <!--@include('home.new_arrivale')-->
-      <!-- end arrival section -->
       
       <!-- product section -->
       <section class="product_section layout_padding">
@@ -62,7 +55,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="{{url('product_details',$products->id)}}" class="option1">
-                           Product details
+                           Detalji o proizvodu
                            </a>
                            <form action="{{url('add_cart',$products->id)}}" method="post">
                               
@@ -73,7 +66,7 @@
                                     value="1" min="1" style="100px">
                                  </div>
                                  <div class="col-md-4">
-                                    <input type="submit" value="Add to cart">
+                                    <input type="submit" value="Dodaj u korpu">
                                  </div>
                               </div>
                            </form>
@@ -90,20 +83,20 @@
 
                         @if($products->discount_price != null)
                         <h6 style="color: red;">
-                           Discount price
+                           Cijena s popustom
                            <br/>
                            {{$products->discount_price}} KM
                         </h6>
 
                         <h6 style="text-decoration: line-through; color: blue;">
-                           Price
+                           Cijena
                            <br/>
                            {{$products->price}} KM
                         </h6>
 
                         @else
                         <h6 style="color: blue;">
-                           Price
+                           Cijena
                            <br/>
                            {{$products->price}} KM
                         </h6>
@@ -126,19 +119,6 @@
          </div>
       </section>
       <!-- end product section -->
-
-      <!-- subscribe section -->
-      <!--@include('home.subscribe')-->
-      <!-- end subscribe section -->
-      <!-- client section -->
-      
-      <!-- end client section -->
-      <!-- footer start -->
-      
-      <!-- footer end -->
-      
-      
-    
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->

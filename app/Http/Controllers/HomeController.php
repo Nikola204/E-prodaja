@@ -30,9 +30,9 @@ class HomeController extends Controller
                 $total_revenue=$total_revenue + $order->price;
             }
 
-            $total_delivered=order::where('delivery_status','=','delivered')->get()->count(); //ovo ispravi
+            $total_delivered=order::where('delivery_status','=','Dostavljeno')->get()->count(); //ovo ispravi
 
-            $total_processing=order::where('delivery_status','=','processing')->get()->count();  //ovo ispravi
+            $total_processing=order::where('delivery_status','=','Obrada')->get()->count();  //ovo ispravi
 
             
             return view('admin.home',compact('total_product','total_user','total_order','total_revenue','total_delivered','total_processing'));
@@ -153,8 +153,8 @@ class HomeController extends Controller
             $order->quantity=$data->quantity;
             $order->image=$data->image;
             $order->product_id=$data->product_id;
-            $order->payment_status='cash on delivery'; //ovo ispravi   
-            $order->delivery_status='processing'; //ovo ispravi
+            $order->payment_status='Plaćanje pri dostavi'; //ovo ispravi   
+            $order->delivery_status='Obrada'; //ovo ispravi
 
             $order->save();
                     
@@ -184,7 +184,7 @@ class HomeController extends Controller
     public function cancel_order($id)
     {
         $order=order::find($id);
-        $order->delivery_status='You canceled the order'; //ovo ispravi
+        $order->delivery_status='Otkazali ste dostavu'; //ovo ispravi
         $order->save();
         return redirect()->back();
     }

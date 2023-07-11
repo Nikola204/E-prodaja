@@ -95,7 +95,7 @@
                     <div class="div_design">
                         <lable>Akcijska cijena:</lable>
                         <input type="number" class="text_color" name="dis_price"
-                        placeholder="Unseite akcijsku cijenu"/>
+                        placeholder="Unesite akcijsku cijenu"/>
                     </div>
 
                     <div class="div_design">
