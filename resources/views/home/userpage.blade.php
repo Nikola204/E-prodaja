@@ -10,7 +10,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="">
-      <title>Web-shop</title>
+      <title>E-prodaja</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.css')}}" />
       <!-- font awesome style -->
@@ -27,18 +27,14 @@
       </div>
       @include('home.why')
       
-      
-      
       <!-- product section -->
       @include('home.product')
       <!-- end product section -->
 
-      
       <!-- client section -->
       @include('home.us')
       <!-- end client section -->
-      
-      
+            
    <script>
       document.addEventListener("DOMContentLoaded", function(event) { 
          var scrollpos = localStorage.getItem('scrollpos');

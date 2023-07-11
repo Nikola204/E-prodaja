@@ -26,6 +26,7 @@
                      <p>
                      Pavo Barišić, rođen je 2000. godine u Mostaru. Osnovnu školu završio je u Prozor-Rami. Nakon završetka osnovne škole upisuje opću gimnaziju u Katoličkom školskom centru "Sv. Josip" u Sarajevu. Poslije srednje škole, na Sveučilištu u Mostaru, Fakultetu strojarstva, računarstva i elektrotehnike, opredjeljuje se za smjer računarstva.
                      </p>
+                     <a href="https://github.com/Nikola204/E-prodaja" target="_blank">Naš GitHub</a>
                   </div>
                </div>
             </div>
@@ -48,6 +49,7 @@
                      <p>
                      Nikola Pehar, rođen je 2001. godine u Mostaru. Osnovnu školu završio je u Čitluku. Nakon završetka osnovne škole upisuje srednju Elektrotehničku školu Ruđera Boškovića u Mostar. Poslije srednje škole, na Sveučilištu u Mostaru, Fakultetu strojarstva, računarstva i elektrotehnike, opredjeljuje se za smjer računarstva.
                      </p>
+                     <a href="https://github.com/Nikola204/E-prodaja" target="_blank">Naš GitHub</a>
                   </div>
                </div>
             </div>
