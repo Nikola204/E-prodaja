@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     @include('admin.css')
 
     <style type="text/css">
@@ -57,85 +56,79 @@
   </head>
   <body>
     <div class="container-scroller">
-      <!-- partial:partials/_sidebar.html -->
       @include('admin.sidebar')
-      <!-- partial -->
       @include('admin.header')
-        <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
 
             @if(session()->has('message'))
-          <div class="alert alert-success">
-              <button type="button" class="close" 
-              data-dismiss="alert" aria-hidden="true">x</button>
-              {{session()->get('message')}}
-          </div>
+            <div class="alert alert-success">
+                <button type="button" class="close" 
+                data-dismiss="alert" aria-hidden="true">x</button>
+                {{session()->get('message')}} 
+            </div>
             @endif
             
                 <div class="div_center">
-                    <h1 class="font_size">Add product</h1>
+                    <h1 class="font_size">Dodaj proizvod</h1>
                 
                 <form action="{{url('/add_product')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="div_design">
-                        <lable>Product title:</lable>
+                        <lable>Ime proizvoda:</lable>
                         <input type="text" class="text_color" name="title"
-                        placeholder="Write a title" required=""/>
+                        placeholder="Unesite ime" required=""/>
                     </div>
 
                     <div class="div_design">
-                        <lable>Product description:</lable>
+                        <lable>Opis proizvoda:</lable>
                         <input type="text" class="text_color" name="description"
-                        placeholder="Write a description" required=""/>
+                        placeholder="Unesite opis" required=""/>
                     </div>
 
                     <div class="div_design">
-                        <lable>Product price:</lable>
+                        <lable>Cijena proizvoda:</lable>
                         <input type="number" class="text_color" name="price"
-                        placeholder="Write a price" required=""/>
+                        placeholder="Unesite cijenu" required=""/>
                     </div>
 
                     <div class="div_design">
-                        <lable>Discount price:</lable>
+                        <lable>Akcijska cijena:</lable>
                         <input type="number" class="text_color" name="dis_price"
-                        placeholder="Write a discount price"/>
+                        placeholder="Unseite akcijsku cijenu"/>
                     </div>
 
                     <div class="div_design">
-                        <lable>Product quantity:</lable>
+                        <lable>Količina proizvoda:</lable>
                         <input type="number" class="text_color" name="quantity"
-                        placeholder="Write a quantity" min="0" required=""/>
+                        placeholder="Unesite količinu" min="0" required=""/>
                     </div>
 
 
                     <div class="div_design">
-                        <lable>Product Category:</lable>
+                        <lable>Kategorija proizvoda:</lable>
                         <select class="text_color" name="category" required="">
-                            <option value="" selected="">Add a category here</option> 
+                            <option value="" selected="">Ovdje dodaj kategoriju</option> 
                             @foreach($category as $category)
                             <option value="{{$category->category_name}}">
                                 {{$category->category_name}}</option>
                             @endforeach
                         </select>
-                    </div>
+                    </div>  
 
                     <div class="div_design">
-                        <lable>Product image here:</lable>
+                        <lable>Slika proizvoda:</lable>
                         <input type="file" name="image" required=""/>
                     </div>
 
                     <div class="div_design">
-                        <input type="submit" value="Add product" class="btn btn-primary"/>
+                        <input type="submit" value="Dodaj produkt" class="btn btn-primary"/>
                     </div>
                 </form>
                 </div>
             </div>
         </div>
-        <!-- @include('admin.body') -->
-    <!-- container-scroller -->
-    <!-- plugins:js -->
+        
     @include('admin.script')
-    <!-- End custom js for this page -->
   </body>
 </html>

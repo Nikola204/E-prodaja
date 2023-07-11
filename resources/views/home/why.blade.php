@@ -2,7 +2,7 @@
          <div class="container">
             <div class="heading_container heading_center">
                <h2>
-                  Why Shop With Us
+                  Zašto izabrati nas?
                </h2>
             </div>
             <div class="row">
@@ -97,11 +97,9 @@
                      </div>
                      <div class="detail-box">
                         <h5>
-                           Fast Delivery
+                           Brza dostava
                         </h5>
-                        <p>
-                           variations of passages of Lorem Ipsum available
-                        </p>
+                        
                      </div>
                   </div>
                </div>
@@ -212,11 +210,9 @@
                      </div>
                      <div class="detail-box">
                         <h5>
-                           Free Shiping
+                           Besplatna dostava
                         </h5>
-                        <p>
-                           variations of passages of Lorem Ipsum available
-                        </p>
+                        
                      </div>
                   </div>
                </div>
@@ -233,11 +229,9 @@
                      </div>
                      <div class="detail-box">
                         <h5>
-                           Best Quality
+                           Najbolja kvaliteta 
                         </h5>
-                        <p>
-                           variations of passages of Lorem Ipsum available
-                        </p>
+                        
                      </div>
                   </div>
                </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    
     @include('admin.css')
     <style type="text/css">
         .div_center{
@@ -29,11 +29,8 @@
   </head>
   <body>
     <div class="container-scroller">
-      <!-- partial:partials/_sidebar.html -->
       @include('admin.sidebar')
-      <!-- partial -->
       @include('admin.header')
-        <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
 
@@ -46,36 +43,33 @@
             @endif
 
             <div class="div_center">
-                <h2 class="h2_font">Add Category</h2>
+                <h2 class="h2_font">Dodaj kategoriju</h2>
 
                 <form action="{{url('/add_category')}}" method="POST">
                   @csrf
-                    <input type="text" class="input_color" name="category" placeholder="Write category name"/>
-                    <input type="submit" class="btn btn-primary" name="submit" value="Add Category"/>
+                    <input type="text" class="input_color" name="category" placeholder="Ime kategorije"/>
+                    <input type="submit" class="btn btn-primary" name="submit" value="Dodaj kategoriju"/> 
                 </form>
             </div>
             <table class="center">
               <tr>
-                <td>Category Name</td>
-                <td>Action</td>
+                <td>Ime kategorije</td>
+                <td>Akcija</td>
               </tr>
               @foreach($data as $data)
               <tr>
                 <td>{{$data->category_name}}</td>
                 <td>
-                  <a onclick="return confirm('Are you sure to delete this')" class="btn btn-danger"
+                  <a onclick="return confirm('Jeste li sigurni da želite izbrisati?')" class="btn btn-danger"
                   href="{{url('delete_category',$data->id)}}">
-                  Delete</a>
+                  Izbriši</a>
                 </td>
               </tr> 
               @endforeach
             </table>
           </div>
       </div>
-        <!--@include('admin.body')-->
-    <!-- container-scroller -->
-    <!-- plugins:js -->
+        
     @include('admin.script')
-    <!-- End custom js for this page -->
   </body>
 </html>

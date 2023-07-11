@@ -1,14 +1,43 @@
-<section class="product_section layout_padding">
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <!-- Site Metas -->
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="">
+      <title>Web-shop</title>
+      <!-- bootstrap core css -->
+      <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.css')}}" />
+      <!-- font awesome style -->
+      <link href="{{asset('home/css/font-awesome.min.css')}}" rel="stylesheet" />
+      <!-- Custom styles for this template -->
+      <link href="{{asset('home/css/style.css')}}" rel="stylesheet" />
+      <!-- responsive style -->
+      <link href="{{asset('home/css/responsive.css')}}" rel="stylesheet" />
+   </head>
+   <body>
+      
+         @include('home.header')
+        
+     
+      
+      
+      <!-- arrival section -->
+      <!--@include('home.new_arrivale')-->
+      <!-- end arrival section -->
+      
+      <!-- product section -->
+      <section class="product_section layout_padding">
          <div class="container">
             <div class="heading_container heading_center">
-               <h2>
-                  Naši <span>proizvodi</span>
-               </h2>
-
-               <br><br>
                
                <div>
-                  <form action="{{url('product_search')}}" method="get">
+                  <form action="{{url('search_product')}}" method="get">
                      @csrf
 
                      <input style="width: 500px;" type="text" name="search" placeholder="Pretraga">
@@ -25,7 +54,7 @@
                 {{session()->get('message')}} 
             </div>
             @endif
-
+            
             <div class="row">
             @foreach($product as $products)
                <div class="col-sm-6 col-md-4 col-lg-4">
@@ -33,7 +62,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="{{url('product_details',$products->id)}}" class="option1">
-                           Detalji o proizvodu
+                           Product details
                            </a>
                            <form action="{{url('add_cart',$products->id)}}" method="post">
                               
@@ -57,29 +86,31 @@
                      <div class="detail-box">
                         <h5>
                            {{$products->title}}
-                        </h5> 
+                        </h5>
 
                         @if($products->discount_price != null)
                         <h6 style="color: red;">
-                           Cijena s popustom
+                           Discount price
                            <br/>
                            {{$products->discount_price}} KM
                         </h6>
 
                         <h6 style="text-decoration: line-through; color: blue;">
-                           Cijena
+                           Price
                            <br/>
                            {{$products->price}} KM
                         </h6>
 
                         @else
                         <h6 style="color: blue;">
-                           Cijena
+                           Price
                            <br/>
                            {{$products->price}} KM
                         </h6>
 
                         @endif
+
+
                         
                      </div>
                   </div>
@@ -94,3 +125,27 @@
             </span>
          </div>
       </section>
+      <!-- end product section -->
+
+      <!-- subscribe section -->
+      <!--@include('home.subscribe')-->
+      <!-- end subscribe section -->
+      <!-- client section -->
+      
+      <!-- end client section -->
+      <!-- footer start -->
+      
+      <!-- footer end -->
+      
+      
+    
+      <!-- jQery -->
+      <script src="home/js/jquery-3.4.1.min.js"></script>
+      <!-- popper js -->
+      <script src="home/js/popper.min.js"></script>
+      <!-- bootstrap js -->
+      <script src="home/js/bootstrap.js"></script>
+      <!-- custom js -->
+      <script src="home/js/custom.js"></script>
+   </body>
+</html>

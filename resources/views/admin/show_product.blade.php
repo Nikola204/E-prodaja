@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     @include('admin.css')
 
     <style type="text/css">
@@ -32,16 +31,17 @@
         .th_des{
             padding: 30px;
         }
+
+        td {
+            border-bottom: 2px solid white;
+        }
     </style>
 
   </head>
   <body>
     <div class="container-scroller">
-      <!-- partial:partials/_sidebar.html -->
       @include('admin.sidebar')
-      <!-- partial -->
       @include('admin.header')
-        <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
 
@@ -53,18 +53,18 @@
             </div>
             @endif
 
-                <h2 class="font_size">All products</h2>
+                <h2 class="font_size">Svi proizvodi</h2>
                 <table class="center">
                     <tr class="th_color">
-                        <th class="th_des">Product title</th>
-                        <th class="th_des">Description</th>
-                        <th class="th_des">Quantity</th>
-                        <th class="th_des">Category</th>
-                        <th class="th_des">Price</th>
-                        <th class="th_des">Discount price</th>
-                        <th class="th_des">Product Image</th>
-                        <th class="th_des">Delete</th>
-                        <th class="th_des">Edit</th>
+                        <th class="th_des">Ime proizvoda</th>
+                        <th class="th_des">Opis</th>
+                        <th class="th_des">Količina</th>
+                        <th class="th_des">Kategorija</th>
+                        <th class="th_des">Cijena</th>
+                        <th class="th_des">Akcijska cijena</th>
+                        <th class="th_des">Slika proizvoda</th>
+                        <th class="th_des">Brisanje</th>
+                        <th class="th_des">Uređivanje</th>
                     </tr>
                     @foreach($product as $product)
                     <tr>
@@ -78,19 +78,16 @@
                             <img class="img_size" src="/product/{{$product->image}}"/>
                         </td>
                         <td>
-                            <a class="btn btn-danger" onclick="return confirm('Are You sure to delete this product?')" href="{{url('delete_product',$product->id)}}">Delete</a>
+                            <a class="btn btn-danger" onclick="return confirm('Are You sure to delete this product?')" href="{{url('delete_product',$product->id)}}">Izbriši</a>
                         </td>
                         <td>
-                            <a class="btn btn-success" href="{{url('edit_product',$product->id)}}">Edit</a>
+                            <a class="btn btn-success" href="{{url('edit_product',$product->id)}}">Uredi</a>
                         </td>
                     </tr>
                     @endforeach
                 </table>
             </div>
         </div>  
-    <!-- container-scroller -->
-    <!-- plugins:js -->
     @include('admin.script')
-    <!-- End custom js for this page -->
   </body>
 </html>

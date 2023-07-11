@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
 
-    <base href="/public">
+    
     @include('admin.css')
 
     <style type="text/css">
@@ -32,9 +31,6 @@
             width: 200px;
         }
 
-        /* .div_design{
-            padding-bottom: 15px;
-        } */
 
         .div_design {
     display: flex;
@@ -59,11 +55,8 @@
   </head>
   <body>
     <div class="container-scroller">
-      <!-- partial:partials/_sidebar.html -->
       @include('admin.sidebar')
-      <!-- partial -->
       @include('admin.header')
-        <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
 
@@ -82,38 +75,38 @@
                     
                 @csrf
                     <div class="div_design">
-                        <lable>Product title:</lable>
+                        <lable>Ime proizvoda:</lable>
                         <input type="text" class="text_color" name="title"
                         placeholder="Write a title" required="" value="{{$product->title}}"/>
                     </div>
 
                     <div class="div_design">
-                        <lable>Product description:</lable>
+                        <lable>Opis proizvoda:</lable>
                         <input type="text" class="text_color" name="description"
                         placeholder="Write a description" required="" value="{{$product->description}}"/>
                     </div>
 
                     <div class="div_design">
-                        <lable>Product price:</lable>
+                        <lable>Cijena proizvoda:</lable>
                         <input type="number" class="text_color" name="price"
                         placeholder="Write a price" required="" value="{{$product->price}}"/>
                     </div>
 
                     <div class="div_design">
-                        <lable>Discount price:</lable>
+                        <lable>Akcijska cijena:</lable>
                         <input type="number" class="text_color" name="dis_price"
                         placeholder="There was no discount" value="{{$product->discount_price}}"/>
                     </div>
 
                     <div class="div_design">
-                        <lable>Product quantity:</lable>
+                        <lable>Količina proizvoda:</lable>
                         <input type="number" class="text_color" name="quantity"
                         placeholder="Write a quantity" min="0" required="" value="{{$product->quantity}}"/>
                     </div>
 
 
                     <div class="div_design">
-                        <lable>Product Category:</lable>
+                        <lable>Kategorija proizvoda:</lable>
                         <select class="text_color" name="category" required="">
                             <option value="{{$product->category}}" selected="">{{$product->category}}</option> 
                             
@@ -126,12 +119,12 @@
                     </div>
 
                     <div class="div_design">
-                        <lable>Curent product image image:</lable>
+                        <lable>Trenutna slika proizvoda:</lable>
                         <img src="/product/{{$product->image}}" height="100" width="100" style="margin: auto;"/>
                     </div>
 
                     <div class="div_design">
-                        <lable>Change product image here:</lable>
+                        <lable>Izmjeni sliku proizvoda:</lable>
                         <input type="file" name="image"/>
                     </div>
 
@@ -142,10 +135,7 @@
                 </div>
             </div>
         </div>
-        <!-- @include('admin.body') -->
-    <!-- container-scroller -->
-    <!-- plugins:js -->
+        
     @include('admin.script')
-    <!-- End custom js for this page -->
   </body>
 </html>

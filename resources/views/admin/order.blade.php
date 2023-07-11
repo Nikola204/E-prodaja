@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     @include('admin.css')
 
     <style type="text/css">
@@ -35,35 +34,32 @@
   </head>
   <body>
     <div class="container-scroller">
-      <!-- partial:partials/_sidebar.html -->
       @include('admin.sidebar')
-      <!-- partial -->
       @include('admin.header')
-        <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
-                <h1 class="title_des">All orders</h1>
+                <h1 class="title_des">Narudžbe</h1>
 
                 <div style="margin-left: 400px; padding-bottom: 30px;">
                     <form action="{{url('search')}}" method="get">
                         @csrf
-                        <input type="text" style="color: black;" name="search" placeholder="Search for product"/>
-                        <input type="submit" value="Search" class="btn btn-outline-primary"/>
+                        <input type="text" style="color: black;" name="search" placeholder="Pretraži proizvode"/>
+                        <input type="submit" value="Pretraži" class="btn btn-outline-primary"/>
                     </form>
                 </div>
                 <table class="table_des">
                     <tr class="th_des">
-                        <th>Name</th>
+                        <th>Ime</th>
                         <th>Email</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Product title</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Payment status</th>
-                        <th>Delivery status</th>
-                        <th>Image</th>
-                        <th>Delivered</th>
+                        <th>Adresa</th>
+                        <th>Telefon</th>
+                        <th>Ime proizvoda</th>
+                        <th>Količina</th>
+                        <th>Cijena</th>
+                        <th>Status plaćanja</th>
+                        <th>Status dostave</th>
+                        <th>Slika</th>
+                        <th>Dostavljeno</th>
                     </tr>
 
                     @forelse($order as $order)
@@ -83,27 +79,24 @@
                         <td>
                             @if($order->delivery_status == 'processing')
                             <a href="{{url('delivered',$order->id)}}" class="btn btn-primary" onclick="return confirm('Are you sure this product is delivered?!')">
-                                Delivered
+                                Dostavljeno
                             </a>
                             @else
-                            <p style="color: green;">Delivered</p>
+                            <p style="color: green;">Dostavljeno</p>
                             @endif
                         </td>
                     </tr>
 
                     @empty
                     <tr>
-                        <td colspan="16">
-                            No data found
+                        <td colspan="11">
+                            Nisu pronađeni podaci
                         </td>
                     </tr>
                     @endforelse
                 </table>
             </div>
         </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
     @include('admin.script')
-    <!-- End custom js for this page -->
   </body>
 </html>
