@@ -72,7 +72,7 @@
                                     value="1" min="1" style="100px">
                                  </div>
                                  <div class="col-md-4">
-                                    <input type="submit" value="Add to cart">
+                                    <input type="submit" value="Dodaj u korpu">
                                  </div>
                               </div>
                         </form>

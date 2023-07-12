@@ -86,7 +86,7 @@
                 <td>{{$cart->price}} KM</td>
                 <td><img class="img_des" src="/product/{{$cart->image}}"/></td>
                 <td>
-                    <a class="btn btn-danger" onclick="return confirm('Are You sure to remove this product')" href="{{url('remove_cart',$cart->id)}}">
+                    <a class="btn btn-danger" onclick="return confirm('Jeste li sigurni da želite ukloniti proizvod iz korpe?!')" href="{{url('remove_cart',$cart->id)}}">
                         Ukloni
                     </a>
                 </td>
