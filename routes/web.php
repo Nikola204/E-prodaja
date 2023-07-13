@@ -75,3 +75,7 @@ Route::get('/products',[HomeController::class,'products']);
 
 Route::get('/search_product',[HomeController::class,'search_product']);
 
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/'); 
+});
